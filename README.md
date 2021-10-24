@@ -42,11 +42,6 @@ Click on the mail button will open the user's default email app.
 
 ## Snapshots
 ![Start](assets/snapshots/start.png)
-![City-Search](assets/snapshots/city-search.png)
-![City-Weather](assets/snapshots/city-weather.png)
-![News](assets/snapshots/news.png)
-![Artist-Search](assets/snapshots/artist-search.png)
-![Song-List](assets/snapshots/song-list.png)
 
 
 
