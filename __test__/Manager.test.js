@@ -5,25 +5,27 @@
 const Manager = require("../lib/Manager");
 
 
-
-
-// test('creates a player object', () => {
-//     const player = new Player('Dave');
+  test("Gets manager number and email and number", () => {
+    const manager = new Manager('Bob','7','aaa@aaa.com','(111)111');
   
-//     expect(player.name).toBe('Dave');
-//     expect(player.health).toEqual(expect.any(Number));
-//     expect(player.strength).toEqual(expect.any(Number));
-//     expect(player.agility).toEqual(expect.any(Number));
-  
-//     expect(player.inventory).toEqual(expect.arrayContaining([expect.any(Object)]));
-//   });
-
-  
+    expect(manager.getName()).toBe('Bob');
+  });
 
   test("Gets manager number and email and number", () => {
-    const manager = new Manager('Manager');
+    const manager = new Manager('Bob','7','aaa@aaa.com','(111)111');
   
-    expect(manager.getStats()).toHaveProperty('(999)999-9999');
-    expect(manager.getStats()).toHaveProperty('aaa@aaa.com');
+    expect(manager.getId()).toBe('7');
 
+  });
+
+  test("Gets manager number and email and number", () => {
+    const manager = new Manager('Bob','7','aaa@aaa.com','(111)111');
+
+    expect(manager.getofficeNumber()).toBe('(111)111');
+  });
+
+  test("Gets manager number and email and number", () => {
+    const manager = new Manager('Bob','7','aaa@aaa.com','(111)111');
+  
+    expect(manager.getEmail()).toBe('aaa@aaa.com');
   });
