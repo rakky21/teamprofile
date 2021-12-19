@@ -2,7 +2,11 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
 
+
+const employeeinfo = [ ] 
 
 function initializeTeamprofile() {
     inquirer
@@ -24,7 +28,7 @@ function initializeTeamprofile() {
             type: 'list',
             name: 'role',
             message: 'What is your position?',
-            choices: ['Manager', 'Intern', 'Engineer', 'Employee']
+            choices: ['Manager', 'Intern', 'Engineer']
         }])
         .then(function (data) {
             if (data.role === 'Engineer') {
@@ -35,28 +39,58 @@ function initializeTeamprofile() {
                         message: 'What is your github?'
                     }).then(function (data2) {
                         const engineer = new Engineer(data.name, data.id, data.email, data2.github);
+                        employeeinfo.push(engineer);
+                        continueProgram();
                     })
             }
             else if (data.role === 'Manager') {
                 inquirer
                     .prompt({
                         type: 'text',
-                        name: 'Office Number',
+                        name: 'officeNumber',
                         message: 'What is your office number?'
+                    }).then( function (data2) {
+                        const manager = new Manager(data.name, data.id, data.email, data2.officeNumber);
+                        employeeinfo.push(manager);
+                        continueProgram();
                     })
             }
             else if (data.role === 'Intern') {
                 inquirer
-                .prompt({
-                    type: 'text',
-                    name: 'School',
-                    message: 'What school did you attend?'
-                })
+                    .prompt({
+                        type: 'text',
+                        name: 'School',
+                        message: 'What school did you attend?'
+                    }).then(function (data2) {
+                        const intern = new Intern(data.name, data.id, data.email, data2.school);
+                        employeeinfo.push(intern);
+                        continueProgram();
+                    })
             }
-            console.log(data);
+
         }).catch(function (err) {
             console.log(err);
         })
 }
+
+function continueProgram() {
+    inquirer
+        .prompt({
+            type: 'list',
+            name: 'quit',
+            choices: ['Yes', 'No'],
+            message: 'Would you like to quit?'
+        }).then(function (data) {
+            if (data.quit === "Yes") {
+                //quit()
+            } else if (data.quit === "No") {
+                initializeTeamprofile();
+            }
+        })
+
+}
+function quit() {
+    console.log(employeeinfo)
+};
 
 initializeTeamprofile();
