@@ -93,4 +93,11 @@ function quit() {
     console.log(employeeinfo)
 };
 
+function writeFile(data2) {
+    fs.writeFile('README.md', generateMarkdown(data), function(err) {
+    if (err) {
+        return console.log(err);
+    }
+    });
+}
 initializeTeamprofile();
