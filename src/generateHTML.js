@@ -1,4 +1,7 @@
-<!doctype html>
+function generateHTML(employeeInfo) {
+    let cards = '';
+    
+let body = `<!doctype html>
 <html lang="en">
 
 <head>
@@ -24,6 +27,7 @@
 <body>
     <div class="container">
         <div class="row align-items-start">
+        ${cards}
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">Team Member Name</h5>
@@ -77,4 +81,8 @@
 
 </body>
 
-</html>
+</html>`
+return body;
+};
+
+module.exports = generateHTML;

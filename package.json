@@ -1,10 +1,10 @@
 {
-  "name": "game",
+  "name": "teamprofile",
   "version": "1.0.0",
   "description": "This is an application for a personal dashboard/homepage.  It is collection of tools utilizing various APIs for finding out information like weather, music, news, etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/rakky21/teamprofile/issues"
   },
-  "homepage": "https://github.com/rakky21/teamprofile#readme"
+  "homepage": "https://github.com/rakky21/teamprofile#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.6.1",
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.0"
+  }
 }
