@@ -1,0 +1,19 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "This is an application for a personal dashboard/homepage.  It is collection of tools utilizing various APIs for finding out information like weather, music, news, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakky21/teamprofile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rakky21/teamprofile/issues"
+  },
+  "homepage": "https://github.com/rakky21/teamprofile#readme"
+}
